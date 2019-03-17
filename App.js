@@ -8,7 +8,7 @@
 
 import React, { Component } from 'react';
 import { Container, Content } from 'native-base';
-import FormLogin from './Components/Login/LoginForm';
+import FormLogin from './src/Components/Login/LoginForm';
 
 type Props = {};
 export default class App extends Component<Props> {
