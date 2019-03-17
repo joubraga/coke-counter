@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, TextInput } from 'react-native';
+import { Container, Header, Content, Form, Item, Input, Button, Text } from 'native-base';
 
 export default class FormLogin extends Component {
   constructor(props) {
@@ -12,25 +12,31 @@ export default class FormLogin extends Component {
 
   render() {
     return (
-      <view>
-        <TextInput
-          style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
-          onChangeText={user => this.setState({ user })}
-          placeholder="Digite seu usuário"
-          // eslint-disable-next-line react/destructuring-assignment
-          value={this.state.user}
-        />
-
-        <TextInput
-          style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
-          onChangeText={password => this.setState({ password })}
-          // eslint-disable-next-line react/destructuring-assignment
-          value={this.state.password}
-        />
-      </view>
+      <Container>
+        <Header />
+        <Content>
+          <Form>
+            <Item>
+              <Input
+                placeholder="Username"
+                value={this.state.user}
+                onChangeText={user => this.setState({ user })}
+              />
+            </Item>
+            <Item last>
+              <Input
+                secureTextEntry
+                placeholder="Password"
+                value={this.state.password}  
+                onChangeText={password => this.setState({ password })}
+              />
+            </Item>
+            <Button block>
+              <Text> Salvar </Text>
+            </Button>
+          </Form>
+        </Content>
+      </Container>
     );
   }
 }
-
-// skip this line if using Create React Native App
-AppRegistry.registerComponent('coke-counter', () => FormLogin);
